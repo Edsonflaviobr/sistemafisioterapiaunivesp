@@ -1,12 +1,12 @@
 ## Curso Eixo Computação - Universidade Virtual do Estado de São Paulo - UNIVESP
 
-### 🚀 Projeto Integrador I
+### 🚀 Projeto Integrador II
 
-Este é o projeto integrador I da UNIVESP 2024 que reuniu alunos dos curso do eixo de computação, nele você terá a oportunidade de verificar o uso do React em uma apresentação simples, usando conceitos específicos.
+Este é o projeto integrador II da UNIVESP 2024 que reuniu alunos dos curso do eixo de computação, nele você terá a oportunidade de verificar o uso do React em uma apresentação simples, usando conceitos específicos.
 
 ### Descrição do projeto
 
-Este projeto consiste em uma aplicação web construída com React para criar um site de cadastro de viagens para os usúarios do SUS da cidade de Tapiratiba/SP. Essa aplicação será utilizada pelos funcionários públicos da Secretária de Saúde que são desegnados para essa tarefa.
+Este projeto consiste em uma aplicação web construída com React para criar um site de cadastro de avaliações de pacientes para os fisioterapeutas da Santa Casa da cidade de Guaxupé/MG.
 
 ### Requisitos
 
@@ -16,15 +16,17 @@ Este projeto consiste em uma aplicação web construída com React para criar um
 
 3. Funcionalidade
 
+4. Testes
+
+5. Acessibilidade
+
 ### Funcionalidades
 
 1. Cadastrar usuário no sistema.
 
-2. Cadastrar e consultar viagens.
+2. Cadastrar avaliações.
 
-3. Cadastrar acompanhantes.
-
-4. Alterar e excluir usuários do sistema.
+3. Função administrador.
 
 ### Estrutura do Projeto
 
@@ -42,14 +44,9 @@ Este projeto consiste em uma aplicação web construída com React para criar um
 
 - Home.jsx
 - Login.jsx
-- Menu.jsx
 - RecuperarSenha.jsx
-- AlteracaoCadastro.jsx
 - CriarConta.jsx
-- CadastroAcompanhante.jsx
-- CadastroViagem.jsx
-- CadastroMotorista.jsx
-- ConsultarViagem.jsx
+- CadastroAvaliação.jsx
 - ConsultaAdministrador.jsx
 
 ### Como utilizar
@@ -71,26 +68,7 @@ Este projeto consiste em uma aplicação web construída com React para criar um
 
 ### 🤝 Colaboradores
 
-Agradecemos às seguintes pessoas que contribuíram para este projeto:
-
 <table>
-  <tr>
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/160056797?v=4" width="100px;" alt="Foto do Mateus Ferreira"/><br>
-        <sub>
-          <b>Mateus Ferreira</b>
-        </sub>
-      </a>
-    </td> 
-    <td align="center">
-      <a href="#">
-        <img src="https://avatars.githubusercontent.com/u/130172788?v=4" width="100px;" alt="Foto do Elton Estevam"/><br>
-        <sub>
-          <b>Elton Estevam</b>
-        </sub>
-      </a>
-    </td>
     <td align="center">
       <a href="#">
         <img src="https://avatars.githubusercontent.com/u/147329714?v=4" width="100px;" alt="Foto do Edson no Github"/><br>
@@ -105,8 +83,8 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
 Clone nossos repositórios e dê uma olhadinha:
 
-FRONT-END: https://github.com/Edsonflaviobr/gestaodeviagensunivesp.git
+FRONT-END:
 
-BACK-END: https://github.com/EltonEstevam/BackendAgendamentoViagens.git
+BACK-END:
 
 <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB">

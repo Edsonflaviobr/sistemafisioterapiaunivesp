@@ -47,13 +47,8 @@ const Login = () => {
             <Header />
 
             <body>
-                <div className="log">
-                    <div className="log--text">
-                        <Title title="Login..." color="#0f014d" />
-                        <Text text="Caso ainda não possua cadastro, favor clique em 'Criar Conta'." />
-                    </div>
-                    <div className="log--log">
-                    <Text text={<span>Acesse o Gerenciador de Viagens Saúde Tour.</span>} />
+                <div>
+                    <Text text={<span>Acesse o Sistema Integrado de Fisioterapia</span>} />
 
 
                         <form onSubmit={handleSubmit(onSubmit)}>
@@ -100,7 +95,6 @@ const Login = () => {
                             <p><Link to="/criar-conta"> <span className="criar-text">Criar Conta</span></Link></p>
                         </div>
                     </div>
-                </div>
             </body>
             <Footer />
         </>

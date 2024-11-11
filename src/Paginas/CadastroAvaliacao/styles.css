@@ -1,0 +1,114 @@
+/* Resetando margens e paddings para garantir consistência entre os navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Garantir que o conteúdo fique no topo */
+  height: 100vh;
+  padding-top: 70px; /* Ajuste para compensar a altura do cabeçalho fixo */
+  width: 100%;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+form label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+form input, form textarea, form .react-datepicker-wrapper {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+form input[type="button"], form button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="button"]:hover, form button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo específico para os campos de data e hora */
+.horario {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.horario label {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo para os campos de input do LabelInput */
+.LabelInput-wrapper {
+  margin-bottom: 1rem;
+}
+
+/* Estilo para os componentes do Footer e Header */
+footer, header {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  z-index: 999;
+}
+
+footer {
+  position: relative;
+}
+
+/* Estilo para o botão principal de cadastro */
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
