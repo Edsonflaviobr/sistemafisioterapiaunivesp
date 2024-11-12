@@ -47,8 +47,8 @@ const CriarConta = () => {
 
             <div className="criar-conta-container">
                 <div className="criar-conta-texto">
-                    <Title title={<span>Olá usuário, realize seu cadastro no sistema para 
-                    ter acesso ao gerenciamento de viagens</span>} />
+                    <Title title={<span>Realize seu cadastro no sistema para 
+                    ter acesso ao cadastro de avaliações</span>} />
                 </div>
 
                 <div className="criar-conta-form">

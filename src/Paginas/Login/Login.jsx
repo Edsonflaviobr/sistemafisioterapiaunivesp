@@ -86,7 +86,6 @@ const Login = () => {
           </form>
 
           <div className="links">
-            <p><Link to="/recuperar-senha"> <span className="esqueci-text">Esqueci minha senha</span> </Link></p>
             <p><Link to="/criar-conta"> <span className="criar-text">Criar Conta</span></Link></p>
           </div>
         </div>

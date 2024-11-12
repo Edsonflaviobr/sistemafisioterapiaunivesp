@@ -13,8 +13,8 @@ const Home = () => {
 
             <div className="home-container">
                 <div className="home-text">
-                    <figure className="home-image">
-                        <img src={tapi} alt="Bandeira Tapiratiba" title="Bandeira Tapiratiba" />
+                    <figure>
+                        <img src={tapi} alt="Logo Santa Casa" title="Logo Santa Casa" />
                     </figure>
 
                     <h1>Bem-vindo ao Sistema Integrado de Fisioterapia</h1>

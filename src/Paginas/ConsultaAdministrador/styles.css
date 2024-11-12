@@ -30,7 +30,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 900px;
-    margin: auto;
+    margin: 50px;
   }
   
   /* Estilo do título da página */
@@ -103,15 +103,6 @@
     margin: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .adm-table td button:first-child {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .adm-table td button:first-child:hover {
-    background-color: #218838;
   }
   
   .adm-table td button:last-child {

@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import LabelInput from '../../Componentes/LabelInput/LabelInput.jsx';
 import { api } from '../../Services/api.js';
 import { useNavigate } from 'react-router-dom';
-import { Header } from '../../Componentes/Header/Header.jsx'
+import { Header } from '../../Componentes/Header/Header.jsx';
 import { Footer } from '../../Componentes/Footer/Footer.jsx';
 import { jsPDF } from 'jspdf';
 
@@ -67,7 +67,7 @@ const CadastroAvaliacao = () => {
         doc.text(`Escala de Funcionalidade: ${ims}`, 10, 90);
         doc.text(`MRC: ${mrc}`, 10, 100);
         doc.save('AvaliacaoCadastrada.pdf');
-        navigate('/menu');
+        navigate('/');
       } else {
         console.error('Erro ao cadastrar avaliação', response);
       }
@@ -83,44 +83,54 @@ const CadastroAvaliacao = () => {
       <div className="form-container">
         <form onSubmit={(e) => e.preventDefault()}>
           <h2>Cadastro de Avaliação</h2>
-          <div className="date-time-container">
-            <div>
-              <label className="form-label">Data</label>
-              <DatePicker
-                selected={data_select}
-                onChange={handleDataSelecionada}
-                dateFormat="yyyy-MM-dd"
-                placeholderText="Selecione uma data"
-                showYearDropdown
-                yearDropdownItemNumber={15}
-                scrollableYearDropdown
-                todayButton="Hoje"
-                minDate={new Date()}
-                maxDate={new Date(new Date().getFullYear() + 1, 11, 31)}
-              />
+          <div className="form-content">
+            {/* Primeira Div - Data, Hora e Nome */}
+            <div className="left-column">
+              <div className="date-time-container">
+                <div>
+                  <label className="form-label">Data</label>
+                  <DatePicker
+                    selected={data_select}
+                    onChange={handleDataSelecionada}
+                    dateFormat="yyyy-MM-dd"
+                    placeholderText="Selecione uma data"
+                    showYearDropdown
+                    yearDropdownItemNumber={15}
+                    scrollableYearDropdown
+                    todayButton="Hoje"
+                    minDate={new Date()}
+                    maxDate={new Date(new Date().getFullYear() + 1, 11, 31)}
+                  />
+                </div>
+                <div>
+                  <label className="form-label">Hora</label>
+                  <DatePicker
+                    selected={hora_select}
+                    onChange={handleHoraSelecionada}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    timeIntervals={15}
+                    timeCaption="Hora"
+                    dateFormat="HH:mm:ss"
+                    placeholderText="Selecione uma hora"
+                  />
+                </div>
+              </div>
+              <LabelInput label="Nome do Paciente" value={nome_paciente} onChange={setNomePaciente} />
+              <LabelInput label="Diagnóstico do Paciente" value={hd_paciente} onChange={setHdPaciente} />
             </div>
-            <div>
-              <label className="form-label">Hora</label>
-              <DatePicker
-                selected={hora_select}
-                onChange={handleHoraSelecionada}
-                showTimeSelect
-                showTimeSelectOnly
-                timeIntervals={15}
-                timeCaption="Hora"
-                dateFormat="HH:mm:ss"
-                placeholderText="Selecione uma hora"
-              />
+
+            {/* Segunda Div - Diagnóstico e Outros Campos */}
+            <div className="right-column">
+              <LabelInput label="Pressões Respiratórias Máximas" value={pi} onChange={setPi} />
+              <LabelInput label="Força de Preensão Palmar" value={hand} onChange={setHand} />
+              <LabelInput label="Pico de Fluxo Expiratório" value={peak} onChange={setPeak} />
+              <LabelInput label="Escala de Funcionalidade" value={ims} onChange={setIms} />
+              <LabelInput label="MRC" value={mrc} onChange={setMrc} type="textarea" />
             </div>
           </div>
 
-          <LabelInput label="Nome do Paciente" value={nome_paciente} onChange={setNomePaciente} />
-          <LabelInput label="Diagnóstico do Paciente" value={hd_paciente} onChange={setHdPaciente} />
-          <LabelInput label="Pressões Respiratórias Máximas" value={pi} onChange={setPi} />
-          <LabelInput label="Força de Preensão Palmar" value={hand} onChange={setHand} />
-          <LabelInput label="Pico de Fluxo Expiratório" value={peak} onChange={setPeak} />
-          <LabelInput label="Escala de Funcionalidade" value={ims} onChange={setIms} />
-          <LabelInput label="MRC" value={mrc} onChange={setMrc} type="textarea" />
+          {/* Botão comum para envio */}
           <button type="button" onClick={handleCadastrar}>Cadastrar Avaliação</button>
         </form>
       </div>
