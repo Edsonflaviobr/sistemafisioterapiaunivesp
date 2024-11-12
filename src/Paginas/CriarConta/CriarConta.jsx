@@ -4,7 +4,7 @@ import { Title } from '../../Componentes/Title/Title.jsx';
 import { Text } from '../../Componentes/Text/Text.jsx';
 import { Input } from '../../Componentes/Input/Input.jsx';
 import { Button } from '../../Componentes/Button/Button.jsx';
-import { MdAccountCircle, MdEmail, MdLock, MdMap } from 'react-icons/md'
+import { MdAccountCircle, MdEmail, MdLock, MdMap } from 'react-icons/md';
 import { useForm } from "react-hook-form";
 import { api } from '../../Services/api';
 import { useNavigate } from 'react-router-dom';
@@ -12,13 +12,13 @@ import { Footer } from '../../Componentes/Footer/Footer.jsx';
 
 const CriarConta = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const { control, handleSubmit, formState: { errors } } = useForm({
-    reValidateMode: 'onChange',
-    mode: 'onChange',
+        reValidateMode: 'onChange',
+        mode: 'onChange',
     });
-    
+
     const onSubmit = async (formData) => {
         try {
             const response = await api.post('usuario', {
@@ -31,7 +31,7 @@ const CriarConta = () => {
             });
 
             if (response.status === 201) {
-                alert ('Conta criada com sucesso!')
+                alert('Conta criada com sucesso!');
                 navigate('/login');
             } else {
                 alert('Erro ao criar o usuário. E-mail já em uso.');
@@ -39,48 +39,93 @@ const CriarConta = () => {
         } catch (error) {
             console.error('Erro ao criar o usuário', error);
         }
-    }; 
+    };
 
     return (
         <>
-
-        <div>
-            
             <Header />
 
-            <div className="body__contentcriarconta">
-                <div className="body__contentcriarconta--text">
-                    <Title title={<span>Olá usúario realize seu cadastro no sistema para 
+            <div className="criar-conta-container">
+                <div className="criar-conta-texto">
+                    <Title title={<span>Olá usuário, realize seu cadastro no sistema para 
                     ter acesso ao gerenciamento de viagens</span>} />
                 </div>
-                <div className="body__contentcriarconta--form">
-                    <Text text={<span> FICHA DE CADASTRO </span>} />                   
+
+                <div className="criar-conta-form">
+                    <Text text={<span> FICHA DE CADASTRO </span>} />
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <Input type="text" placeholder="Digite seu nome completo" leftIcon={<MdAccountCircle />} id="nome" name="nome" control={control} rules={{ required: 'Nome é obrigatório' }} />
-                        {errors.nome && <span>{errors.nome.message}</span>}
 
-                        <Input type="email" placeholder="Digite seu e-mail" leftIcon={<MdEmail />} id="email" name="email" control={control} rules={{ required: 'E-mail é obrigatório' }} />
-                        {errors.email && <span>{errors.email.message}</span>}
+                        <Input
+                            type="text"
+                            placeholder="Digite seu nome completo"
+                            leftIcon={<MdAccountCircle />}
+                            id="nome"
+                            name="nome"
+                            control={control}
+                            rules={{ required: 'Nome é obrigatório' }}
+                            className="criar-conta-input"
+                        />
+                        {errors.nome && <span className="input-error">{errors.nome.message}</span>}
 
-                        <Input type="password" placeholder="Digite uma senha" leftIcon={<MdLock />} id="senha" name="senha" control={control} pattern="[0-9]*" rules={{ required: 'Senha é obrigatório' }} />
-                        {errors.senha && <span>{errors.senha.message}</span>}
+                        <Input
+                            type="email"
+                            placeholder="Digite seu e-mail"
+                            leftIcon={<MdEmail />}
+                            id="email"
+                            name="email"
+                            control={control}
+                            rules={{ required: 'E-mail é obrigatório' }}
+                            className="criar-conta-input"
+                        />
+                        {errors.email && <span className="input-error">{errors.email.message}</span>}
 
-                        <Input type="password" placeholder="Confirme sua senha" leftIcon={<MdLock />} id="confirma" name="confirma" control={control} pattern="[0-9]*" rules={{ required: 'Senha é obrigatório' }} />
-                        {errors.confirma && <span>{errors.confirma.message}</span>}
+                        <Input
+                            type="password"
+                            placeholder="Digite uma senha"
+                            leftIcon={<MdLock />}
+                            id="senha"
+                            name="senha"
+                            control={control}
+                            pattern="[0-9]*"
+                            rules={{ required: 'Senha é obrigatório' }}
+                            className="criar-conta-input"
+                        />
+                        {errors.senha && <span className="input-error">{errors.senha.message}</span>}
 
-                        <Input type="matricula" placeholder="Digite sua matrícula" leftIcon={<MdMap />} id="matricula" name="matricula" control={control} rules={{ required: 'Matrícula é obrigatória' }} />
-                        {errors.matricula && <span>{errors.matricula.message}</span>}
+                        <Input
+                            type="password"
+                            placeholder="Confirme sua senha"
+                            leftIcon={<MdLock />}
+                            id="confirma"
+                            name="confirma"
+                            control={control}
+                            pattern="[0-9]*"
+                            rules={{ required: 'Senha é obrigatório' }}
+                            className="criar-conta-input"
+                        />
+                        {errors.confirma && <span className="input-error">{errors.confirma.message}</span>}
 
-                        <Button title="Cadastrar" variant="secondary" type="submit"/>
+                        <Input
+                            type="matricula"
+                            placeholder="Digite sua matrícula"
+                            leftIcon={<MdMap />}
+                            id="matricula"
+                            name="matricula"
+                            control={control}
+                            rules={{ required: 'Matrícula é obrigatória' }}
+                            className="criar-conta-input"
+                        />
+                        {errors.matricula && <span className="input-error">{errors.matricula.message}</span>}
+
+                        <Button title="Cadastrar" variant="secondary" type="submit" />
                     </form>
-                                              
-                </div>                 
+                </div>
             </div>
-        </div>
-  
-            <Footer />                
-        </>
-    )
-}
 
-export { CriarConta }
+            <Footer />
+        </>
+    );
+};
+
+export { CriarConta };
+

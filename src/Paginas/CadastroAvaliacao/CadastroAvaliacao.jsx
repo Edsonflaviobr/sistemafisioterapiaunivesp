@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './styles.css'; // Importando o arquivo de estilos
+import './styles.css';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'; 
+import 'react-datepicker/dist/react-datepicker.css';
 import LabelInput from '../../Componentes/LabelInput/LabelInput.jsx';
 import { api } from '../../Services/api.js';
-import { useNavigate } from 'react-router-dom'; 
-import { Header } from '../../Componentes/Header/Header.jsx';
+import { useNavigate } from 'react-router-dom';
+import { Header } from '../../Componentes/Header/Header.jsx'
 import { Footer } from '../../Componentes/Footer/Footer.jsx';
 import { jsPDF } from 'jspdf';
 
@@ -19,11 +19,10 @@ const CadastroAvaliacao = () => {
   const [peak, setPeak] = useState('');
   const [ims, setIms] = useState('');
   const [mrc, setMrc] = useState('');
-
   const navigate = useNavigate();
 
   const handleDataSelecionada = (date) => {
-    setData_Select(date); 
+    setData_Select(date);
   };
 
   const handleHoraSelecionada = (time) => {
@@ -36,9 +35,9 @@ const CadastroAvaliacao = () => {
         alert('Por favor, selecione uma data e hora.');
         return;
       }
+
       const dataFormatted = data_select.toISOString().split('T')[0];
       const horaFormatted = hora_select.toTimeString().split(' ')[0];
-
       const formData = {
         data_select: dataFormatted,
         hora_select: horaFormatted,
@@ -51,12 +50,11 @@ const CadastroAvaliacao = () => {
         mrc,
       };
 
-      let url = 'viagem'; 
+      const url = '/avaliacao'; // Corrigido a definição da URL
       const response = await api.post(url, formData);
 
       if (response.status === 201) {
         alert('Avaliação cadastrada com sucesso!');
-
         const doc = new jsPDF();
         doc.text('Dados da Avaliação', 10, 10);
         doc.text(`Data: ${dataFormatted}`, 10, 20);
@@ -69,7 +67,6 @@ const CadastroAvaliacao = () => {
         doc.text(`Escala de Funcionalidade: ${ims}`, 10, 90);
         doc.text(`MRC: ${mrc}`, 10, 100);
         doc.save('AvaliacaoCadastrada.pdf');
-
         navigate('/menu');
       } else {
         console.error('Erro ao cadastrar avaliação', response);
@@ -83,14 +80,12 @@ const CadastroAvaliacao = () => {
   return (
     <>
       <Header />
-
       <div className="form-container">
         <form onSubmit={(e) => e.preventDefault()}>
           <h2>Cadastro de Avaliação</h2>
-
-          <div className="horario">
+          <div className="date-time-container">
             <div>
-              <label>Data</label>
+              <label className="form-label">Data</label>
               <DatePicker
                 selected={data_select}
                 onChange={handleDataSelecionada}
@@ -104,9 +99,8 @@ const CadastroAvaliacao = () => {
                 maxDate={new Date(new Date().getFullYear() + 1, 11, 31)}
               />
             </div>
-
             <div>
-              <label>Hora</label>
+              <label className="form-label">Hora</label>
               <DatePicker
                 selected={hora_select}
                 onChange={handleHoraSelecionada}
@@ -127,11 +121,9 @@ const CadastroAvaliacao = () => {
           <LabelInput label="Pico de Fluxo Expiratório" value={peak} onChange={setPeak} />
           <LabelInput label="Escala de Funcionalidade" value={ims} onChange={setIms} />
           <LabelInput label="MRC" value={mrc} onChange={setMrc} type="textarea" />
-
           <button type="button" onClick={handleCadastrar}>Cadastrar Avaliação</button>
         </form>
       </div>
-
       <Footer />
     </>
   );

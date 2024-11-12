@@ -5,17 +5,20 @@
   box-sizing: border-box;
 }
 
+/* Estilos globais */
 body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f7fc;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Garantir que o conteúdo fique no topo */
+  align-items: flex-start;
+  /* Garantir que o conteúdo fique no topo */
   height: 100vh;
-  padding-top: 70px; /* Ajuste para compensar a altura do cabeçalho fixo */
+  padding-top: 20px; /* Ajuste para compensar a altura do cabeçalho fixo */
   width: 100%;
 }
 
+/* Cabeçalhos */
 h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -23,7 +26,8 @@ h2 {
   color: #333;
 }
 
-form {
+/* Container do formulário */
+.form-container {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -32,14 +36,16 @@ form {
   max-width: 600px;
 }
 
-form label {
+/* Estilo dos labels */
+.form-label {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: block;
 }
 
-form input, form textarea, form .react-datepicker-wrapper {
+/* Estilo dos campos de entrada (input, textarea) */
+.form-input, .react-datepicker-wrapper {
   width: 100%;
   padding: 0.75rem;
   margin-bottom: 1rem;
@@ -48,67 +54,31 @@ form input, form textarea, form .react-datepicker-wrapper {
   font-size: 1rem;
 }
 
-form input[type="button"], form button {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 1.1rem;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form input[type="button"]:hover, form button:hover {
-  background-color: #45a049;
-}
-
-/* Estilo específico para os campos de data e hora */
-.horario {
+/* Estilo específico para campos de data e hora */
+.date-time-container {
   display: flex;
   gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.horario label {
+.date-time-container .form-label {
   margin-right: 0.5rem;
   font-size: 1rem;
   font-weight: bold;
 }
 
-/* Estilo para os campos de input do LabelInput */
-.LabelInput-wrapper {
-  margin-bottom: 1rem;
-}
-
-/* Estilo para os componentes do Footer e Header */
-footer, header {
-  width: 100%;
-  padding: 1rem;
-  background-color: #4CAF50;
-  color: white;
-  text-align: center;
-  z-index: 999;
-}
-
-footer {
-  position: relative;
-}
-
-/* Estilo para o botão principal de cadastro */
+/* Botão */
 button {
-  width: 100%;
-  padding: 1rem;
-  background-color: #4CAF50;
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #0056b3;
 }
 

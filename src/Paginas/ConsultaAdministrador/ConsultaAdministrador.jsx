@@ -32,16 +32,12 @@ const ConsultaAdministrador = () => {
       setLoading(false);
     }
   };
-  
 
   const handleUsuarioSelecionado = (usuario) => {
     setUsuarioSelecionado(usuario);
   };
 
-  const handleEditarUsuario = () => {
-    navigate('/alteracao-cadastro', { state: { usuario: usuarioSelecionado } });
-  };
-
+  
   const handleDeletarUsuario = async () => {
     try {
       const response = await api.delete(`usuario/${usuarioSelecionado.id}`);
@@ -65,17 +61,23 @@ const ConsultaAdministrador = () => {
   return (
     <div>
       <Header />
-      <div className='adm'>
-        <form onSubmit={handleSubmit}>
+      <div className="adm-container">
+        <form className="adm-form" onSubmit={handleSubmit}>
           <h2>Consultar Usuários</h2>
           <label> Nome do Usuário </label>
-          <input type="text" id="consultaNomeUsuario" value={consultaNomeUsuario} onChange={handleConsultaNomeUsuarioChange} />
+          <input
+            type="text"
+            id="consultaNomeUsuario"
+            value={consultaNomeUsuario}
+            onChange={handleConsultaNomeUsuarioChange}
+          />
           <button type="submit">Pesquisar</button>
         </form>
+
         {loading ? (
           <p>Carregando...</p>
         ) : (
-          <table>
+          <table className="adm-table">
             <thead>
               <tr>
                 <th>Nome</th>
@@ -87,7 +89,6 @@ const ConsultaAdministrador = () => {
                 <tr key={usuario.id} onClick={() => handleUsuarioSelecionado(usuario)}>
                   <td>{usuario.nome}</td>
                   <td>
-                    <button type="button" onClick={handleEditarUsuario}>Editar</button>
                     <button type="button" onClick={handleDeletarUsuario}>Deletar</button>
                   </td>
                 </tr>
@@ -102,7 +103,5 @@ const ConsultaAdministrador = () => {
 };
 
 export { ConsultaAdministrador };
-
-
 
 

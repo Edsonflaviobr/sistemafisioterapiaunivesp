@@ -1,17 +1,19 @@
-.body__contentRecuperarSenha {
+/* Estilos específicos para a página RecuperarSenha */
+.recuperar-senha-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     margin-top: 10vh;
     min-height: 70vh;
     max-height: 90vh;
     min-width: 50%;
-    max-width: 60%; 
-    margin: 0 auto; 
-    padding: 0px 20px 30px 10px; 
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 0px 20px 30px 10px;
     background-color: #e7e7e7;
 }
 
-.body__contentRecuperarSenha .body__contentRecuperarSenha--text {
+.recuperar-senha-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,16 +21,34 @@
     padding: 10px 100px 40px;
 }
 
-.body__contentRecuperarSenha .body__contentRecuperarSenha--form {
+.recuperar-senha-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
     margin-top: 30px;
-    padding:10px 60px 10px;
+    padding: 10px 60px 10px;
     background-color: #babfd2;
 }
 
+.recuperar-senha-form form {
+    padding-bottom: 50px;
+}
+
+.recuperar-senha-form span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.recuperar-senha-form input {
+    margin: 10px 0;
+}
+
+.recuperar-senha-form button {
+    margin-top: 20px;
+}
+
+/* Estilos gerais para o layout */
 .containerRecuperarSenha {
     display: flex;
     flex-direction: row;
@@ -40,13 +60,13 @@
 }
 
 .wrapperRecuperarSenha {
-    max-width: 300px;  
+    max-width: 300px;
 }
 
 .columnRecuperarSenha {
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
     flex: 1;
 }
 
@@ -56,8 +76,4 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-}
-
-formRecuperarSenha {
-    padding-bottom: 50px;
 }
