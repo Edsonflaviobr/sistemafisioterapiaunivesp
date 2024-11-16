@@ -63,6 +63,7 @@ const Login = () => {
                   message: 'Digite um e-mail válido',
                 },
               }}
+              ariaLabel="Endereço de e-mail"
             />
             {errors.email && <span>{errors.email.message}</span>}
 
@@ -76,8 +77,9 @@ const Login = () => {
               rules={{
                 required: 'Senha é obrigatória'
               }}
+              ariaLabel="Senha"
             />
-            {errors.password && <span>{errors.password.message}</span>}
+            {errors.senha && <span>{errors.senha.message}</span>}
 
             {error && <span className="error-message">{error}</span>}
 
@@ -96,4 +98,3 @@ const Login = () => {
 };
 
 export { Login };
-

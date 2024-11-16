@@ -116,17 +116,17 @@ const CadastroAvaliacao = () => {
                   />
                 </div>
               </div>
-              <LabelInput label="Nome do Paciente" value={nome_paciente} onChange={setNomePaciente} />
-              <LabelInput label="Diagnóstico do Paciente" value={hd_paciente} onChange={setHdPaciente} />
+              <LabelInput label="Nome do Paciente" value={nome_paciente} onChange={setNomePaciente} id="nome-paciente"/>
+              <LabelInput label="Diagnóstico do Paciente" value={hd_paciente} onChange={setHdPaciente} id="hd-paciente"/>
             </div>
 
             {/* Segunda Div - Diagnóstico e Outros Campos */}
             <div className="right-column">
-              <LabelInput label="Pressões Respiratórias Máximas" value={pi} onChange={setPi} />
-              <LabelInput label="Força de Preensão Palmar" value={hand} onChange={setHand} />
-              <LabelInput label="Pico de Fluxo Expiratório" value={peak} onChange={setPeak} />
-              <LabelInput label="Escala de Funcionalidade" value={ims} onChange={setIms} />
-              <LabelInput label="MRC" value={mrc} onChange={setMrc} type="textarea" />
+              <LabelInput label="Pressões Respiratórias Máximas" value={pi} onChange={setPi} id="pi" />
+              <LabelInput label="Força de Preensão Palmar" value={hand} onChange={setHand} id="hand"/>
+              <LabelInput label="Pico de Fluxo Expiratório" value={peak} onChange={setPeak} id="peak"/>
+              <LabelInput label="Escala de Funcionalidade" value={ims} onChange={setIms} id="ims"/>
+              <LabelInput label="MRC" value={mrc} onChange={setMrc} type="textarea" id="mrc"/>
             </div>
           </div>
 

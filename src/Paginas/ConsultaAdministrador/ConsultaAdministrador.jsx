@@ -68,6 +68,7 @@ const ConsultaAdministrador = () => {
             id="consultaNomeUsuario"
             value={consultaNomeUsuario}
             onChange={handleConsultaNomeUsuarioChange}
+            aria-label="Nome do usuário"
           />
           <button type="submit">Pesquisar</button>
         </form>

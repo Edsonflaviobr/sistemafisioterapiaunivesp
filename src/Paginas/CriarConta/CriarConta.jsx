@@ -64,6 +64,7 @@ const CriarConta = () => {
                             control={control}
                             rules={{ required: 'Nome é obrigatório' }}
                             className="criar-conta-input"
+                            ariaLabel="Nome completo"
                         />
                         {errors.nome && <span className="input-error">{errors.nome.message}</span>}
 
@@ -76,6 +77,7 @@ const CriarConta = () => {
                             control={control}
                             rules={{ required: 'E-mail é obrigatório' }}
                             className="criar-conta-input"
+                            ariaLabel="Endereço de e-mail"
                         />
                         {errors.email && <span className="input-error">{errors.email.message}</span>}
 
@@ -89,6 +91,7 @@ const CriarConta = () => {
                             pattern="[0-9]*"
                             rules={{ required: 'Senha é obrigatório' }}
                             className="criar-conta-input"
+                            ariaLabel="Senha"
                         />
                         {errors.senha && <span className="input-error">{errors.senha.message}</span>}
 
@@ -102,6 +105,7 @@ const CriarConta = () => {
                             pattern="[0-9]*"
                             rules={{ required: 'Senha é obrigatório' }}
                             className="criar-conta-input"
+                            ariaLabel="Confirmar senha"
                         />
                         {errors.confirma && <span className="input-error">{errors.confirma.message}</span>}
 
@@ -114,6 +118,7 @@ const CriarConta = () => {
                             control={control}
                             rules={{ required: 'Matrícula é obrigatória' }}
                             className="criar-conta-input"
+                            ariaLabel="Matrícula"
                         />
                         {errors.matricula && <span className="input-error">{errors.matricula.message}</span>}
 
@@ -128,4 +133,3 @@ const CriarConta = () => {
 };
 
 export { CriarConta };
-
