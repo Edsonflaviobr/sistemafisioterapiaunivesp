@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './styles.css';
 import { api } from '../../Services/api';
 import { Header } from '../../Componentes/Header/Header';
 import { Footer } from '../../Componentes/Footer/Footer';
-import { useNavigate } from 'react-router-dom';
 
 const ConsultaAdministrador = () => {
   const [consultaNomeUsuario, setConsultaNomeUsuario] = useState('');
   const [usuariosFiltrados, setUsuariosFiltrados] = useState([]);
   const [usuarioSelecionado, setUsuarioSelecionado] = useState(null);
   const [loading, setLoading] = useState(false); // Adicionando um estado para controle de carregamento
-  const navigate = useNavigate();
 
   const handleConsultaNomeUsuarioChange = (e) => {
     setConsultaNomeUsuario(e.target.value);

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { Header } from '../../Componentes/Header/Header.jsx';
-import { Text } from '../../Componentes/Text/Text.jsx';
 import { Input } from '../../Componentes/Input/Input.jsx';
 import { Button } from '../../Componentes/Button/Button.jsx';
 import { MdEmail, MdLock } from 'react-icons/md';
